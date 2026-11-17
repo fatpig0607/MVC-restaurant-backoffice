@@ -5,7 +5,7 @@ namespace BackOffice.Areas.Catalog.Models.Service.Repository
 {
     public interface IMenuRepository
     {
-        public IEnumerable<MenuViewModel> GetMenuList(int id);
+        public MenuList GetMenuList(int id,int page=0);
         public IEnumerable<MenuCategories> GetMenuCategories();
         public ServiceResult Create(Menu menu, IFormFile? img);
         public Menu GetById(int id);

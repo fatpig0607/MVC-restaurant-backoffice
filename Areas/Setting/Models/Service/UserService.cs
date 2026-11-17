@@ -58,12 +58,6 @@ namespace BackOffice.Areas.Setting.Models.Service
             }
         }
 
-        //public IEnumerable<User> GetAll()
-        //{
-        //    var users = _dbContext.users.ToList();
-        //    return users;
-        //}
-
         public User GetById(int id)
         {
             var u = _dbContext.users.FirstOrDefault(u => u.user_id == id);

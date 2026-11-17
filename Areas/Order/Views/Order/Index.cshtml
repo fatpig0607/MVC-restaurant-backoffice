@@ -8,8 +8,9 @@
 <div class="mb-4">
     <h1 class="h3 fw-bold mb-1">訂單查詢</h1>
 </div>
-<div>
-    <table class="table">
+<div class="card border-0 shadow-sm rounded-3 overflow-hidden">
+    <div class="table-responsive">
+        <table class="table table-hover align-middle text-center mb-0 admin-table">
         <thead>
             <tr>
                 <th>@Html.DisplayNameFor(m=>m.order_id)</th>
@@ -25,17 +26,20 @@
             @foreach(var item in Model)
             {
                 <tr>
-                    <td>@Html.DisplayFor(m => item.order_id)</td>
-                    <td>NT$ @Html.DisplayFor(m => item.total_price)</td>
-                    <td>@Html.DisplayFor(m => item.created_at)</td>
+                    <td>@item.order_id</td>
+                    <td>NT$ @item.total_price</td>
+                    <td>@item.created_at</td>
                     @if (ViewBag.permissionCodes.Contains("Order.Detail"))
                     {
-                    <td>
-                        <a class="btn btn-warning" asp-action="Detail" asp-route-id="@item.order_id">訂單詳情</a>
+                    <td class="text-nowrap">
+                        <div class="d-flex justify-content-center align-items-center gap-1">
+                            <a class="btn btn-warning" asp-action="Detail" asp-route-id="@item.order_id">訂單詳情</a>
+                        </div>
                     </td>
                     }
                 </tr>
             }
         </tbody>
-    </table>
+        </table>
+    </div>
 </div>

@@ -35,7 +35,7 @@ namespace BackOffice.Areas.Catalog.Controllers
             }
         }
         [HttpGet]
-        public IActionResult Index(int id)
+        public IActionResult Index(int id,int page=1)
         {
             var PermissionCode = GetPermissionCodes();
             if (PermissionCode.Contains("Menu.View"))
@@ -43,8 +43,13 @@ namespace BackOffice.Areas.Catalog.Controllers
                 ViewBag.CategoryList = _menuCategories.GetAll();
                 ViewBag.SelectedCategoryId = id;
                 ViewBag.permissionCodes = PermissionCode;
-                var q = _menu.GetMenuList(id);
-                return View(q);
+                if (page < 1)
+                {
+                    page = 1;
+                }
+                ViewBag.CurrentPage = page;
+                MenuList response = _menu.GetMenuList(id, page);
+                return View(response);
             }
             else
             {
@@ -89,13 +94,17 @@ namespace BackOffice.Areas.Catalog.Controllers
             {
                 var CategoryList = _menu.GetMenuCategories();
                 ViewBag.CategoryList = new SelectList(CategoryList, "category_id", "category_name");
-                var q= _menu.GetById(id);
-                return View(q);
+                var q = _menu.GetById(id);
+                if (q != null)
+                {
+                    return View(q);
+                }
+                else
+                {
+                    return NotFound();
+                }
             }
-            else
-            {
                 return StatusCode(403);
-            }
         }
         [HttpPost]
         [ValidateAntiForgeryToken]

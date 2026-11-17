@@ -21,7 +21,6 @@ C:\9. MVC\BackOffice\BackOffice\obj\Debug\net10.0\rjsmcshtml.dswa.cache.json
 C:\9. MVC\BackOffice\BackOffice\obj\Debug\net10.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
 C:\9. MVC\BackOffice\BackOffice\obj\Debug\net10.0\scopedcss\bundle\BackOffice.styles.css
 C:\9. MVC\BackOffice\BackOffice\obj\Debug\net10.0\scopedcss\projectbundle\BackOffice.bundle.scp.css
-C:\9. MVC\BackOffice\BackOffice\obj\Debug\net10.0\compressed\0bpa1h5awy-{0}-b9sayid5wm-b9sayid5wm.gz
 C:\9. MVC\BackOffice\BackOffice\obj\Debug\net10.0\compressed\j0swpb6jbx-{0}-61n19gt1b8-61n19gt1b8.gz
 C:\9. MVC\BackOffice\BackOffice\obj\Debug\net10.0\compressed\zde1xhs498-{0}-xtxxf3hu2r-xtxxf3hu2r.gz
 C:\9. MVC\BackOffice\BackOffice\obj\Debug\net10.0\compressed\vqwm18ew91-{0}-bqjiyaj88i-bqjiyaj88i.gz
@@ -92,7 +91,6 @@ C:\9. MVC\BackOffice\BackOffice\obj\Debug\net10.0\staticwebassets.build.endpoint
 C:\9. MVC\BackOffice\BackOffice\obj\Debug\net10.0\swae.build.ex.cache
 C:\9. MVC\BackOffice\BackOffice\obj\Debug\net10.0\BackOffice.dll
 C:\9. MVC\BackOffice\BackOffice\obj\Debug\net10.0\refint\BackOffice.dll
-C:\9. MVC\BackOffice\BackOffice\obj\Debug\net10.0\BackOffice.pdb
 C:\9. MVC\BackOffice\BackOffice\obj\Debug\net10.0\BackOffice.genruntimeconfig.cache
 C:\9. MVC\BackOffice\BackOffice\obj\Debug\net10.0\ref\BackOffice.dll
 C:\9. MVC\BackOffice\BackOffice\obj\Debug\net10.0\BackOffice.csproj.Up2Date
@@ -133,7 +131,6 @@ C:\9. MVC\BackOffice\BackOffice\bin\Debug\net10.0\runtimes\win\lib\net9.0\Micros
 C:\9. MVC\BackOffice\BackOffice\bin\Debug\net10.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
 C:\9. MVC\BackOffice\BackOffice\bin\Debug\net10.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
 C:\9. MVC\BackOffice\BackOffice\bin\Debug\net10.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
-C:\9. MVC\BackOffice\BackOffice\obj\Debug\net10.0\BackOffice.sourcelink.json
 C:\9. MVC\BackOffice\BackOffice\obj\Debug\net10.0\compressed\vo7ocvor72-{0}-wk5jpe9viq-wk5jpe9viq.gz
 C:\9. MVC\BackOffice\BackOffice\obj\Debug\net10.0\compressed\jr6o38o0w5-{0}-5prcgegwts-5prcgegwts.gz
 C:\Users\User\AppData\Local\Temp\BackOffice-review-20261111\appsettings.Development.json
@@ -145,4 +142,14 @@ C:\Users\User\AppData\Local\Temp\BackOffice-review-20261111\BackOffice.deps.json
 C:\Users\User\AppData\Local\Temp\BackOffice-review-20261111\BackOffice.runtimeconfig.json
 C:\Users\User\AppData\Local\Temp\BackOffice-review-20261111\BackOffice.dll
 C:\Users\User\AppData\Local\Temp\BackOffice-review-20261111\BackOffice.pdb
+C:\9. MVC\BackOffice\BackOffice\obj\Debug\net10.0\compressed\0bpa1h5awy-{0}-tp5h91lqtp-tp5h91lqtp.gz
+C:\Users\User\.codex\visualizations\2026\11\02\01a19ace-cbe5-76a3-8429-affde047ea89\review-build\appsettings.Development.json
+C:\Users\User\.codex\visualizations\2026\11\02\01a19ace-cbe5-76a3-8429-affde047ea89\review-build\appsettings.json
+C:\Users\User\.codex\visualizations\2026\11\02\01a19ace-cbe5-76a3-8429-affde047ea89\review-build\BackOffice.staticwebassets.runtime.json
+C:\Users\User\.codex\visualizations\2026\11\02\01a19ace-cbe5-76a3-8429-affde047ea89\review-build\BackOffice.staticwebassets.endpoints.json
+C:\Users\User\.codex\visualizations\2026\11\02\01a19ace-cbe5-76a3-8429-affde047ea89\review-build\BackOffice.deps.json
+C:\Users\User\.codex\visualizations\2026\11\02\01a19ace-cbe5-76a3-8429-affde047ea89\review-build\BackOffice.runtimeconfig.json
+C:\Users\User\.codex\visualizations\2026\11\02\01a19ace-cbe5-76a3-8429-affde047ea89\review-build\BackOffice.dll
+C:\9. MVC\BackOffice\BackOffice\obj\Debug\net10.0\BackOffice.sourcelink.json
 C:\9. MVC\BackOffice\BackOffice\obj\Debug\net10.0\staticwebassets.upToDateCheck.txt
+C:\9. MVC\BackOffice\BackOffice\obj\Debug\net10.0\BackOffice.pdb

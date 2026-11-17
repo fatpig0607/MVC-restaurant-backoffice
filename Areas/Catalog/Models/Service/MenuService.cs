@@ -13,7 +13,7 @@ namespace BackOffice.Areas.Catalog.Models.Service
             _dbContext = dbContext;
             _environment = environment;
         }
-        public IEnumerable<MenuViewModel> GetMenuList(int id)
+        public MenuList GetMenuList(int id,int page=0)
         {
             var q = from m in _dbContext.menu
                     join mc in _dbContext.menu_categories
@@ -32,11 +32,23 @@ namespace BackOffice.Areas.Catalog.Models.Service
                         created_at = m.created_at,
                         updated_at = m.updated_at
                     };
+            int perPageCount = 10;
             if (id!=0 &&_dbContext.menu_categories.Any(mc=>mc.category_id==id))
-            { 
-                q = q.Where(m => m.category_id == id);
+            {
+                q= q.Where(m => m.category_id == id);
             }
-            return  q.OrderBy(m => m.sort).ThenBy(m => m.menu_id).ToList();
+            int totalCount=q.Count();
+            q = q.OrderBy(m => m.sort).ThenBy(m => m.menu_id);
+            if (page > 0)
+            {
+                q=q.Skip((page-1)*perPageCount).Take(perPageCount);
+            }
+            MenuList menulist = new MenuList
+            {
+                menuList = q.ToList(),
+                totalCount = totalCount
+            };
+            return menulist;
         }
         public IEnumerable<MenuCategories> GetMenuCategories()
         {

@@ -1,4 +1,4 @@
-﻿@model IEnumerable<BackOffice.Areas.Catalog.Models.ViewModel.MenuViewModel>
+﻿@model MenuList
 @using System.Text.Json
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -87,15 +87,15 @@
             <thead>
                 <tr>
                     @* <th>@Html.DisplayNameFor(model => model.menu_id)</th> *@
-                    <th>@Html.DisplayNameFor(model => model.category_name)</th>
-                    <th>@Html.DisplayNameFor(model => model.menu_name)</th>
-                    <th>@Html.DisplayNameFor(model => model.menu_description)</th>
-                    <th>@Html.DisplayNameFor(model => model.menu_img)</th>
-                    <th>@Html.DisplayNameFor(model => model.price)</th>
-                    <th>@Html.DisplayNameFor(model => model.status)</th>
-                    <th>@Html.DisplayNameFor(model => model.sort)</th>
-                    <th>@Html.DisplayNameFor(model => model.created_at)</th>
-                    <th>@Html.DisplayNameFor(model => model.updated_at)</th>
+                    <th>@Html.DisplayNameFor(model => model.menuList.First().category_name)</th>
+                    <th>@Html.DisplayNameFor(model => model.menuList.First().menu_name)</th>
+                    <th>@Html.DisplayNameFor(model => model.menuList.First().menu_description)</th>
+                    <th>@Html.DisplayNameFor(model => model.menuList.First().menu_img)</th>
+                    <th>@Html.DisplayNameFor(model => model.menuList.First().price)</th>
+                    <th>@Html.DisplayNameFor(model => model.menuList.First().status)</th>
+                    <th>@Html.DisplayNameFor(model => model.menuList.First().sort)</th>
+                    <th>@Html.DisplayNameFor(model => model.menuList.First().created_at)</th>
+                    <th>@Html.DisplayNameFor(model => model.menuList.First().updated_at)</th>
                     @if (ViewBag.permissionCodes.Contains("Menu.Edit")||ViewBag.permissionCodes.Contains("Menu.Delete"))
                     {
                         <th>操作</th>
@@ -103,13 +103,13 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach(var item in Model)
+                @foreach(var item in Model.menuList)
                 {
                     <tr class="@(item.status==0?"table-secondary":"")">
                         @* <td>@Html.DisplayFor(model => item.menu_id)</td> *@
-                        <td>@Html.DisplayFor(model => item.category_name)</td>
-                        <td>@Html.DisplayFor(model => item.menu_name)</td>
-                        <td>@Html.DisplayFor(model => item.menu_description)</td>
+                        <td>@item.category_name</td>
+                        <td>@item.menu_name</td>
+                        <td>@item.menu_description</td>
                        <td> 
                            @if (!string.IsNullOrWhiteSpace(item.menu_img))
                                 {
@@ -120,7 +120,7 @@
                                 <div class="menuimg"></div>
                             }
                         </td>
-                        <td>NT$@Html.DisplayFor(model => item.price)</td>
+                        <td>NT$@item.price</td>
                         <td class="text-nowrap">
                         @if(item.status==1){
                                     @:販售中
@@ -130,9 +130,9 @@
                                     @:停售
                                 }
                         </td>
-                        <td>@Html.DisplayFor(model => item.sort)</td>
-                        <td>@Html.DisplayFor(model => item.created_at)</td>
-                        <td>@Html.DisplayFor(model => item.updated_at)</td>
+                        <td>@item.sort</td>
+                        <td>@item.created_at</td>
+                        <td>@item.updated_at</td>
                         @if (ViewBag.permissionCodes.Contains("Menu.Edit") || ViewBag.permissionCodes.Contains("Menu.Delete"))
                         {
                             
@@ -155,6 +155,14 @@
                 }
             </tbody>
         </table>
+        <div class="d-flex justify-content-center gap-2 my-3">
+        @for(int i =0;i<(Model.totalCount/10.0);i++){
+           <a asp-action="Index"
+             asp-route-id="@(ViewBag.SelectedCategoryId)" 
+           asp-route-page="@(i+1)" 
+           class="btn btn-outline-primary @(ViewBag.CurrentPage==i+1?"active":"")">@(i+1)</a>
+        }
+        </div>
     </div>
 </div>
 @section Scripts{

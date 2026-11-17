@@ -102,7 +102,14 @@ namespace BackOffice.Areas.Setting.Controllers
             ServiceResult result = _user.Update(user);
             TempData["Success"] = result.success;
             TempData["Message"] = result.message;
-            return View(user);
+            var originUser = _user.GetById(user.user_id);
+            if (originUser == null)
+            {
+                return NotFound();
+            }
+            user.user_name = originUser.user_name;
+
+            return RedirectToAction();
         }
         [HttpPost]
         [ValidateAntiForgeryToken]

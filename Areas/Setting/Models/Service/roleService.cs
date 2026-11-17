@@ -14,15 +14,21 @@ namespace BackOffice.Areas.Setting.Models.Service
         public ServiceResult Delete(int id)
         {
             var q = _dbContext.roles.FirstOrDefault(r => r.role_id == id);
-            if (_dbContext.users.Any(r => r.role_id == q.role_id))
+
+            if (q != null)
             {
-                return new ServiceResult { success = false, message = "已有帳號綁定此角色，需先解除帳號綁定" };
-            }
-            else if (q != null)
-            {
-                _dbContext.roles.Remove(q);
-                _dbContext.SaveChanges();
-                return new ServiceResult { success = true, message = "成功刪除指定角色" };
+                if (_dbContext.users.Any(r => r.role_id == q.role_id))
+                {
+                    return new ServiceResult { success = false, message = "已有帳號綁定此角色，需先解除帳號綁定" };
+                } 
+                else
+                {
+                    List<RolePermission> rolepermissions = _dbContext.roles_permissions.Where(rp=>rp.role_id==id).ToList();
+                    _dbContext.roles.Remove(q);
+                    _dbContext.roles_permissions.RemoveRange(rolepermissions);
+                    _dbContext.SaveChanges();
+                    return new ServiceResult { success = true, message = "成功刪除指定角色" };
+                }
             }
             else
             {

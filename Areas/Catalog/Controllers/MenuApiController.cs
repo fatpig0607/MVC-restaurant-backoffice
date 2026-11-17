@@ -1,4 +1,5 @@
-﻿using BackOffice.Areas.Catalog.Models.Service.Repository;
+﻿using BackOffice.Areas.Catalog.Models;
+using BackOffice.Areas.Catalog.Models.Service.Repository;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BackOffice.Areas.Catalog.Controllers
@@ -17,7 +18,7 @@ namespace BackOffice.Areas.Catalog.Controllers
         [HttpGet("menu")]
         public IActionResult GetMenu()
         {
-            var q = _menu.GetMenuList(0).Select(item => new
+            var q = _menu.GetMenuList(0).menuList.Select(item => new
             {
                 id = item.menu_id,
                 category = item.category_name,
@@ -28,7 +29,12 @@ namespace BackOffice.Areas.Catalog.Controllers
                 imgurl = item.menu_img
             }).ToList();
 
-            return Ok(q);
+            var list = new
+            {
+                menuList = q,
+                totalCount = q.Count,
+            };
+            return Ok(list);
         }
         [HttpGet("menucategories")]
         public IActionResult GetMenuCategories()
