@@ -150,6 +150,13 @@ C:\Users\User\.codex\visualizations\2026\11\02\01a19ace-cbe5-76a3-8429-affde047e
 C:\Users\User\.codex\visualizations\2026\11\02\01a19ace-cbe5-76a3-8429-affde047ea89\review-build\BackOffice.deps.json
 C:\Users\User\.codex\visualizations\2026\11\02\01a19ace-cbe5-76a3-8429-affde047ea89\review-build\BackOffice.runtimeconfig.json
 C:\Users\User\.codex\visualizations\2026\11\02\01a19ace-cbe5-76a3-8429-affde047ea89\review-build\BackOffice.dll
+C:\Users\User\.codex\visualizations\2026\11\02\01a19ace-cbe5-76a3-8429-affde047ea89\review-build-1118\appsettings.Development.json
+C:\Users\User\.codex\visualizations\2026\11\02\01a19ace-cbe5-76a3-8429-affde047ea89\review-build-1118\appsettings.json
+C:\Users\User\.codex\visualizations\2026\11\02\01a19ace-cbe5-76a3-8429-affde047ea89\review-build-1118\BackOffice.staticwebassets.runtime.json
+C:\Users\User\.codex\visualizations\2026\11\02\01a19ace-cbe5-76a3-8429-affde047ea89\review-build-1118\BackOffice.staticwebassets.endpoints.json
+C:\Users\User\.codex\visualizations\2026\11\02\01a19ace-cbe5-76a3-8429-affde047ea89\review-build-1118\BackOffice.deps.json
+C:\Users\User\.codex\visualizations\2026\11\02\01a19ace-cbe5-76a3-8429-affde047ea89\review-build-1118\BackOffice.runtimeconfig.json
+C:\Users\User\.codex\visualizations\2026\11\02\01a19ace-cbe5-76a3-8429-affde047ea89\review-build-1118\BackOffice.dll
 C:\9. MVC\BackOffice\BackOffice\obj\Debug\net10.0\BackOffice.sourcelink.json
 C:\9. MVC\BackOffice\BackOffice\obj\Debug\net10.0\staticwebassets.upToDateCheck.txt
 C:\9. MVC\BackOffice\BackOffice\obj\Debug\net10.0\BackOffice.pdb

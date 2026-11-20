@@ -99,7 +99,7 @@ namespace BackOffice.Areas.Setting.Models.Service
         {
             return _dbContext.roles.ToList();
         }
-        public IEnumerable<UserIndexViewModel> GetUserList()
+        public IEnumerable<UserIndexViewModel> GetUserList(string? userName,int roleId=0,int status=-1)
         {
             var users = from u in _dbContext.users
                         join r in _dbContext.roles
@@ -115,6 +115,18 @@ namespace BackOffice.Areas.Setting.Models.Service
                             role_id = u.role_id,
                             role_name = r.role_name
                         };
+            if (!string.IsNullOrWhiteSpace(userName))
+            {
+                users = users.Where(u => u.user_name.Contains(userName.Trim()));
+            }
+            if (roleId != 0 && _dbContext.roles.Any(r => r.role_id == roleId))//roleId=0 為不限角色
+            {
+                users = users.Where(u => u.role_id == roleId);
+            }
+            if(status != -1)//status=-1 為不限狀態
+            {
+                users = users.Where(u => u.status == status);
+            }
             return users.ToList();
         }
 

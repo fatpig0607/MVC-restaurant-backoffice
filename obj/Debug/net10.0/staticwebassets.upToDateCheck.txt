@@ -66,6 +66,7 @@ wwwroot\lib\jquery\LICENSE.txt
 wwwroot\uploads\menu\1853b636fbd649cda13acb19965ad31e.jpg
 wwwroot\uploads\menu\1a1cc3c71c584180901594675ed3f66c.png
 wwwroot\uploads\menu\27b555e21dac48b5a92f4c6743ef1ef5.jpg
+wwwroot\uploads\menu\37652de82f2d4c4e9ff2da95cfd5538d.jpg
 wwwroot\uploads\menu\3bc797cbffef4983ae0582303bc3a31c.jpg
 wwwroot\uploads\menu\3cc4ba20686d4b0eb29916306a884b34.jpg
 wwwroot\uploads\menu\411c6c0582954d9187054ea97d0ae0f2.jpg

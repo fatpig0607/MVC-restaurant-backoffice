@@ -29,7 +29,7 @@ namespace BackOffice.Areas.Setting.Controllers
             return permissionCodes;
         }
         [HttpGet]
-        public IActionResult Index()
+        public IActionResult Index(string? user_name,int role_id=0,int status=-1)
         {
             var permissionCodes = GetPermissionCodes();
             if (!permissionCodes.Contains("User.View"))
@@ -37,7 +37,17 @@ namespace BackOffice.Areas.Setting.Controllers
                 return StatusCode(403);
             }
             ViewBag.permissionCodes = permissionCodes;
-            return View(_user.GetUserList());
+            var roles = _user.GetRoles();
+            var statusOptions = new[]
+            {
+                new{status=0,status_name="未啟用" },
+                new{ status=1,status_name="啟用"}
+            };
+            ViewBag.StatusList = new SelectList(statusOptions, "status", "status_name",status);
+            ViewBag.RoleList = new SelectList(roles, "role_id", "role_name",role_id);
+
+            ViewBag.searchUserName= user_name;
+            return View(_user.GetUserList(user_name,role_id,status));
         }
         [HttpGet]
         public IActionResult Create()
@@ -103,11 +113,6 @@ namespace BackOffice.Areas.Setting.Controllers
             TempData["Success"] = result.success;
             TempData["Message"] = result.message;
             var originUser = _user.GetById(user.user_id);
-            if (originUser == null)
-            {
-                return NotFound();
-            }
-            user.user_name = originUser.user_name;
 
             return RedirectToAction();
         }

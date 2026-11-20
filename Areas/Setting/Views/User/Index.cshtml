@@ -15,6 +15,61 @@
        asp-action="Create" class="btn btn-warning">新增</a>
     </p>
 }
+<form asp-action="Index"
+      method="get"
+      class="card bg-light border shadow-sm rounded-3 p-3 mb-4"
+onsubmit="prepareSearch()">
+
+    <div class="row g-3 align-items-end">
+        <div class="col-12 col-md-4">
+            <label for="searchUserName" class="form-label">
+                帳號
+            </label>
+            <input id="searchUserName"
+                   name="user_name"
+                   class="form-control"
+                   type="search"
+                   value="@ViewBag.searchUserName"
+                   placeholder="輸入帳號關鍵字" />
+        </div>
+        <div class="col-12 col-md-4">
+            <label for="searchStatus" class="form-label">
+                狀態
+            </label>
+            <select id="searchStatus"
+                    name="status"
+                    class="form-select"
+                    asp-items="ViewBag.StatusList">
+                <option value="-1">全部狀態</option>
+            </select>
+        </div>
+
+        <div class="col-12 col-md-4">
+            <label for="searchRole" class="form-label">
+                角色
+            </label>
+            <select id="searchRole"
+                    name="role_id"
+                    class="form-select"
+                    asp-items="ViewBag.RoleList">
+                <option value="0">全部角色</option>
+            </select>
+        </div>
+
+        <div class="col-12 col-md-3">
+            <div class="d-flex gap-2">
+                <button type="submit"
+                        class="btn btn-primary flex-grow-1">
+                    查詢
+                </button>
+                <a asp-action="Index"
+                   class="btn btn-outline-secondary flex-grow-1">
+                    重置
+                </a>
+            </div>
+        </div>
+    </div>
+</form>
 <div class="card border-0 shadow-sm rounded-3 overflow-hidden">
     <div class="table-responsive">
         <table class="table table-hover align-middle text-center mb-0 admin-table">
@@ -112,6 +167,15 @@
             if (!confirm('確定要刪除嗎?')){
                 e.preventDefault();
             }
+    }
+    function prepareSearch(){
+        const userName= $('#searchUserName');
+        const status= $('#searchStatus');
+        const role= $('#searchRole');
+        userName.val(userName.val().trim());
+        userName.prop("disabled",userName.val()=="");
+        status.prop("disabled",status.val()=="-1");
+        role.prop("disabled",role.val()=="0");
     }
 </script>
 } 
