@@ -51,3 +51,31 @@ body {
 .admin-table > tbody > tr:last-child > td {
     border-bottom: 0;
 }
+
+.admin-layout {
+    background-color: #ffffff;
+    color: #1f2937;
+    font-family: "Microsoft JhengHei", sans-serif;
+}
+
+/* 導覽列 */
+.admin-navbar {
+    background-color: #fffdf5;
+    border-top: 4px solid #ffc107;
+    border-bottom: 1px solid #eadfc4;
+    box-shadow: 0 4px 16px rgba(31, 41, 55, 0.06);
+    padding-top: 0.8rem;
+    padding-bottom: 0.8rem;
+}
+
+.admin-navbar .navbar-brand {
+    color: #1f2937;
+    font-weight: 700;
+    font-size: 1.25rem;
+    letter-spacing: 0.04em;
+}
+
+.admin-navbar .navbar-toggler {
+    border-color: #d1d5db;
+    border-radius: 0.6rem;
+}

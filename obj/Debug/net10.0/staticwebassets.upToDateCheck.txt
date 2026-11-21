@@ -84,6 +84,7 @@ wwwroot\uploads\menu\99d14745c1cb4021a905b754f1640841.webp
 wwwroot\uploads\menu\a2a8bf30bf804a13b1c3e2e1453aaf3b.jpg
 wwwroot\uploads\menu\aab7ac934a444e04b156574e75697faf.jpg
 wwwroot\uploads\menu\c313843d52354e4d8c091d774eb20b40.jpg
+wwwroot\uploads\menu\c4d87f22348a400b8e5c95702a65c83b.jpg
 wwwroot\uploads\menu\ceb570e205254b22bd0e8a8ca653d928.jpg
 wwwroot\uploads\menu\cefd751f43244c41a6c2da52a7e49a34.webp
 wwwroot\uploads\menu\cf71e04742cb4f6980ce77660d28d394.jpg
